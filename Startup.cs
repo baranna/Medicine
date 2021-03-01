@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Medicine.Extensions;
 using Medicine.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace Medicine
 {
@@ -27,7 +28,14 @@ namespace Medicine
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<MedicineDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDatabaseDeveloperPageExceptionFilter();
+
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
+
+
             services.ConfigureSwaggerDocument();
 
             services.AddTransient<IProductService, ProductService>();
