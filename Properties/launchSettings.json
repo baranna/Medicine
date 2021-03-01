@@ -18,7 +18,7 @@
       }
     },
     "Medicine": {
-      "commandName": "Project",
+      "commandName": "Docker",
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
