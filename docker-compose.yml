@@ -6,7 +6,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: medicine-backend
     restart: unless-stopped
     networks:
       - medicine-network
@@ -15,7 +14,6 @@ services:
 
   mssql:
     image: microsoft/mssql-server-linux
-    container_name: medicine-db
     volumes:
       - mssql-server-linux-data:/var/opt/mssql/data
     environment:
