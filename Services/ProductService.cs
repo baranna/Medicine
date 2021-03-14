@@ -26,6 +26,7 @@ namespace Medicine.Services
                 .Products
                 .Where(!string.IsNullOrEmpty(filter.Name), p => p.Name.ToLower().Contains(filter.Name.ToLower()))
                 .Where(!string.IsNullOrEmpty(filter.ActiveIngredient), p => p.ActiveIngredient.ToLower().Contains(filter.ActiveIngredient.ToLower()))
+                .OrderBy(p => p.Name)
                 .ProjectTo<ProductDto>(_mapper.ConfigurationProvider)
                 .ToPagedListAsync(pageRequest);
         }
