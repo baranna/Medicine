@@ -34,7 +34,7 @@ namespace Medicine.Services
                 Id = sideEffectId,
                 Name = sideEffect.Name
             };
-            
+
             var activeIngredientIds = await _dbContext
                 .SideEffectFrequencies
                 .Where(se => se.SideEffect.Id == sideEffectId)

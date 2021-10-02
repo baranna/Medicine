@@ -23,6 +23,12 @@ namespace Medicine
 
         public DbSet<SideEffectFrequency> SideEffectFrequencies { get; set; }
 
+        public DbSet<Disease> Diseases { get; set; }
+
+        public DbSet<Symptom> Symptoms { get; set; }
+
+        public DbSet<Syndrome> Syndromes { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>().ToTable(nameof(Product));
@@ -30,6 +36,10 @@ namespace Medicine
             modelBuilder.Entity<SideEffectFrequency>().ToTable(nameof(SideEffectFrequency));
             modelBuilder.Entity<ActiveIngredient>().ToTable(nameof(ActiveIngredient));
             modelBuilder.Entity<ProductActiveIngredient>().ToTable(nameof(ProductActiveIngredient));
+            modelBuilder.Entity<Disease>().ToTable(nameof(Disease));
+            modelBuilder.Entity<Symptom>().ToTable(nameof(Symptom));
+            modelBuilder.Entity<Syndrome>().ToTable(nameof(Syndrome));
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

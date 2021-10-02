@@ -35,10 +35,10 @@ namespace Medicine
             services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
 
-
             services.ConfigureSwaggerDocument();
 
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IDiseaseService, DiseaseService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

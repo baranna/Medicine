@@ -11,6 +11,5 @@ namespace Medicine.Dto
         public string Frequency { get; set; }
 
         public string SideEffectName { get; set; }
-
     }
 }
